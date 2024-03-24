@@ -1,3 +1,4 @@
 export const MESSAGE_TYPES = Object.freeze({
-    ERROR: 'Error al hacer la solicitud'
+    ERROR: 'Error al hacer la solicitud',
+    UNEXISTS: 'Dato inexistente'
 })
