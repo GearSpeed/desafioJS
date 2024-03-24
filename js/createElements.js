@@ -1,6 +1,18 @@
 // export const elements = () => {
 document.addEventListener('DOMContentLoaded', () => {
-    // Busca el id de la seccion que empezará
+
+    const postsLS = JSON.parse(localStorage.getItem("posts"))
+
+    if (postsLS){
+    postsLS.forEach(post => {
+    // const userFind = users.find((user) => user.id === data.id)
+    const authorPost = post.autor
+    const titlePost = post.titulo
+    const fechaPost = post.fecha
+    const reactionPost = post.reacciones
+    const commentPost = post.comentarios
+    const tasgPost = post.hashtag
+
     const container = document.getElementById('mainPost')
     
     // Crea un div con la class card y post-seccion y la ingresa en el id
@@ -48,19 +60,17 @@ document.addEventListener('DOMContentLoaded', () => {
             postTitleInfo.classList.add('post-title-info')
             // Crea un div para el author Name
             const authorName = document.createElement('div')
-            authorName.innerHTML = "Michael Tharrington for The DEV Team"
+            authorName.innerHTML = authorPost
             // Crea un div para la fecha
             const authorDate = document.createElement('div')
-            authorDate.innerHTML = "Feb 9"
+            authorDate.innerHTML = fechaPost
 
             // Agrega el authorName y el authorDate en el div PostTitleInfo
-            postTitleInfo.append(authorName, authorDate)
+               postTitleInfo.append(authorName, authorDate)
 
             // Agreg el postAuthor y el postTitleInfo en postMeta
-            postMeta.append(postAuthor, postTitleInfo)
-       
-        
-    // Crea un div con la class post-title y lo agrega a post Content
+               postMeta.append(postAuthor, postTitleInfo)
+        // Crea un div con la class post-title y lo agrega a post Content
     const postIdention = document.createElement('div')
     postIdention.classList.add('post-indention')
     postContent.append(postIdention)
@@ -68,22 +78,31 @@ document.addEventListener('DOMContentLoaded', () => {
         // Crea un div con el titulo de la entrada
         const title = document.createElement('div')
         title.classList.add('title')
-        title.innerHTML = 'What was your win this week?'
+        title.innerHTML = titlePost
          
         // crea los hijos de los # 
         const tags = document.createElement('div')
         tags.classList.add('tags')
             
             // crea los hijos de los divs
-            const tag1 = document.createElement('div')
-            tag1.classList.add('card', 'tag' , 'tag-discuss')
-            tag1.innerHTML = `# <span>weeklyretro</spa`
+            tasgPost.forEach((tag, index) => {
+                let tagElement = document.createElement('div')
+                if(index == 0) tagElement.classList.add('tag-discuss')
+                if(index == 1) tagElement.classList.add('tag-react')
+                if(index == 2) tagElement.classList.add('tag-tailwindcss')
+                 
+                tagElement.classList.add('card', 'tag')
+                
+                tagElement.textContent = `# ${tag}`
 
-            const tag2 = document.createElement('div')
-            tag2.classList.add('card' , 'tag' ,'tag-weeklyretro')
-            tag2.innerHTML = `# <span>weeklyretro</spa`
+                         
+                // Agregar el elemento de la etiqueta al contenedor de etiquetas
+                tags.appendChild(tagElement)
 
-            tags.append(tag1, tag2)
+            });
+            
+
+            
 
         // Crea un div con la clase Bottom
         const bottom = document.createElement('div')
@@ -116,23 +135,28 @@ document.addEventListener('DOMContentLoaded', () => {
         // Crea un div con la clase reactions-counter con el contador dinamico
         const reactionsCounter = document.createElement('div')
         reactionsCounter.classList.add('reactions-counter')
-        reactionsCounter.innerHTML = `25 <span class="d-none d-sm-contents"> reactions</span>`
+        reactionsCounter.innerHTML = `${reactionPost} <span class="d-none d-sm-contents"> reactions</span>`
 
         // Crea un div con la clase 'card', 'comments e inyecta un html con el numero de comentarios
         const comments = document.createElement('div')
         comments.classList.add('card', 'comments')
         comments.innerHTML = ` <img class="icon" src="./img/svg/icon-comment.svg" alt="comment"> 
-        49 <span class="d-none d-sm-contents"> comments</span>`
+        ${commentPost} <span class="d-none d-sm-contents"> comments</span>`
         reactions.append(reactionsIcons, reactionsCounter)
 
         // Crea un div con la clase save e inyecta el icono de la basura
        const delate = document.createElement('div')
        delate.classList.add('save')
-       delate.innerHTML = `<svg class="icon icon-trash" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true">
-       <path d="M15 3h-3V2c0-.55-.45-1-1-1H9c-.55 0-1 .45-1 1v1H5c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1h1v13c0 1.1.9 2 2 2h6c1.1 0 2-.9 2-2V7h1c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1zm-4-1c.55 0 1 .45 1 1v1H8V3c0-.55.45-1 1-1h2zm4 18H8V7h7v13zm2-16H6V4h11v1z"/>
-        </svg>`
+       delate.innerHTML = `<!-- Icono de Bote de Basura con estilo en línea -->
+       <i class="fas fa-trash icon icon-bookmark" style="color: black; font-size: 14px;"></i>
+       
+       <!-- Icono de Bolígrafo con estilo en línea -->
+       <i class="fas fa-pen icon icon-bookmark" style="color: black; font-size: 14px;"></i>
+       ` 
+       
 
-        // Inyecta el div details y delate al bottom
+
+        // Inyecta el div details y edit al bottom
         bottom.append(details, delate)
         // Inyecta el div reactions, comments al div details
         details.append(reactions, comments)
@@ -140,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
         postIdention.append(title, tags, bottom)
     
     
-    
-    })
-
-// Cierre del Export }
+        
+    })   
+}  
+})
