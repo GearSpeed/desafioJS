@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const srchPosts = JSON.parse(localStorage.getItem("searchPosts"))
 
     if(srchPosts){
-        postsLS.forEach(post => {
+        srchPosts.forEach(post => {
             // const userFind = users.find((user) => user.id === data.id)
             const authorPost = post.autor
             const titlePost = post.titulo
