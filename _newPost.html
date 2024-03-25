@@ -7,7 +7,7 @@
     <title>DEV Community</title>
     <link rel="icon" type="image/x-icon"
         href="https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico">
-    <script type="module" src="./js/clickCheckBox.js"></script>    
+    <script type="module" src="./js/clickCheckBox.js"></script>
 </head>
 <body>
 
@@ -96,11 +96,12 @@
                         <input type="number" name="comentarios" placeholder="Cuantos comentarios?" />
                         <br /><br />
                         <input type="number" name="reacciones" placeholder="Cuantas reacciones?" />
-                        <br /><br />
+                        <br />
                         
                   
                         <p>Hashtags</p>
                         <br>
+                        <div id="hashes">
                         <input id="productivity" type="checkbox" name="hashtag" value="productivity" />
                         <label for="productivity">Productivity</label>
                   
@@ -118,7 +119,7 @@
 
                         <input id="linux" type="checkbox" name="hashtag" value="linux" />
                         <label for="linux">Linux</label>
-                        <br /><br /><br />
+                        <br /><br />
                         <input id="devops" type="checkbox" name="hashtag" value="devops" />
                         <label for="devops">DevOps</label>
 
@@ -139,7 +140,8 @@
 
                         <input id="javascript" type="checkbox" name="hashtag" value="javascript" />
                         <label for="javascript">JavaScript</label>
-                        <br><br>
+                        </div>
+                        <br>
                         <button type="submit" >Enviar</button>
                       </form>
                 </div>

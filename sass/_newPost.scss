@@ -58,16 +58,20 @@ input[type=text], [type=date], [type=number], select {
     border: 0.15em solid currentColor;
     border-radius: 0.15em;
     transform: translateY(-0.075em);
+    
+    
   }
   
   label {
     border: none;
     color: $base-100;
-    padding: 16px 32px;
+    padding: 8px 25px;
     text-decoration: none;
-    margin: 10px;
+    margin: 9px;
     cursor: pointer;
     transition: ease 1000ms;
     border-radius: 4px;
     background-color:$purple-100 ;
+    user-select: none;
   }
+  
