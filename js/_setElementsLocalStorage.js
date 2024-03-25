@@ -20,6 +20,7 @@
                     const postsToString = JSON.stringify(posts) //el arreglo posts y la bandera se convierten a string
                     localStorage.setItem('bandera',flag)
                     localStorage.setItem('posts',postsToString)
+                    window.location.reload();
                 }else alert(MESSAGE_TYPES.ERROR)
                 }catch {
                     alert(MESSAGE_TYPES.ERROR)
