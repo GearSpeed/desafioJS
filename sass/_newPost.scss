@@ -14,6 +14,7 @@
     
     #crud {
         margin: 0px;
+        text-align: center;
     }
 }
 input[type=text], [type=date], [type=number], select {
@@ -26,7 +27,7 @@ input[type=text], [type=date], [type=number], select {
     box-sizing: border-box;
   }
   textarea {
-    width: 100%;
+    min-width: 500px;
     height: 150px;
     padding: 12px 20px;
     box-sizing: border-box;
