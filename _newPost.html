@@ -8,6 +8,7 @@
     <script src="./js/crearObjetosPost.js"></script>
     <link rel="icon" type="image/x-icon"
         href="https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico">
+    <script type="module" src="./js/clickCheckBox.js"></script>
 </head>
 <body>
 
@@ -86,30 +87,63 @@
                 <div class="newPost">
                     <form id="crud">
                         <input type="text" name="titulo" placeholder="Titulo" />
-                        <br /><br />
+                        <br />
                         <input type="text" name="autor" placeholder="Autor" />
-                        <br /><br />
+                        <br />
                         <textarea name="descripcion" id="descripcion" placeholder="Descripcion"></textarea>
-                        <br /><br />
+                        <br />
                         <input type="date" name="fecha" id="fecha" placeholder="Fecha" />
-                        <br /><br />
+                        <br />
                         <input type="number" name="comentarios" placeholder="Cuantos comentarios?" />
-                        <br /><br />
+                        <br />
                         <input type="number" name="reacciones" placeholder="Cuantas reacciones?" />
-                        <br /><br />
+                        <br />
                         
                   
                         <p>Hashtags</p>
-                        <input id="productivity" type="checkbox" name="hashtag" value="productivity" />
-                        <label for="html">Productivity</label>
+                        <br>
+                        <div id="hashes">
+                        <input id="productivity" type="checkbox" name="hashtag" value="productivity" class="check-with-label"/>
+                        <label for="productivity" class="label-for-check">Productivity</label>
                   
-                        <input id="discuss" type="checkbox" name="hashtag" value="discuss" />
-                        <label for="js">Discuss</label>
+                        <input id="discuss" type="checkbox" name="hashtag" value="discuss" class="check-with-label"/>
+                        <label for="discuss" class="label-for-check">Discuss</label>
                   
-                        <input id="weeklyretro" type="checkbox" name="hashtag" value="CSS" />
-                        <label for="css">Weeklyretro</label>
-                        <br /><br />
-                        <button type="submit" class="tag-header">Enviar</button>
+                        <input id="weeklyretro" type="checkbox" name="hashtag" value="CSS" class="check-with-label"/>
+                        <label for="weeklyretro" class="label-for-check">Weeklyretro</label>
+
+                        <input id="github" type="checkbox" name="hashtag" value="github" class="check-with-label"/>
+                        <label for="github" class="label-for-check">GitHub</label>
+
+                        <input id="begginers" type="checkbox" name="hashtag" value="begginers" class="check-with-label"/>
+                        <label for="begginers" class="label-for-check">Begginers</label>
+
+                        <input id="linux" type="checkbox" name="hashtag" value="linux" class="check-with-label"/>
+                        <label for="linux" class="label-for-check">Linux</label>
+                        <br /><br /><br />
+                        <input id="devops" type="checkbox" name="hashtag" value="devops" class="check-with-label"/>
+                        <label for="devops" class="label-for-check">DevOps</label>
+
+                        <input id="programming" type="checkbox" name="hashtag" value="programming" class="check-with-label"/>
+                        <label for="programming" class="label-for-check">Programming</label>
+
+                        <input id="testing" type="checkbox" name="hashtag" value="testing" class="check-with-label"/>
+                        <label for="testing" class="label-for-check">Testing</label>
+
+                        <input id="webdev" type="checkbox" name="hashtag" value="webdev" class="check-with-label"/>
+                        <label for="webdev" class="label-for-check">webdev</label>
+
+                        <input id="react" type="checkbox" name="hashtag" value="react" class="check-with-label"/>
+                        <label for="react" class="label-for-check">React</label>
+
+                        <input id="python" type="checkbox" name="hashtag" value="python" class="check-with-label"/>
+                        <label for="python" class="label-for-check">Python</label>
+
+                        <input id="javascript" type="checkbox" name="hashtag" value="javascript" class="check-with-label"/>
+                        <label for="javascript" class="label-for-check">JavaScript</label>
+                        </div>
+                        <br>
+                        <button type="submit" >Enviar</button>
                       </form>
                 </div>
             </div>
