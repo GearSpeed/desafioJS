@@ -1,4 +1,17 @@
-.newPostContent {
+.posts {
+  text-align: center;
+}
+  
+  #searchdate{
+    min-width: 100px;
+    min-height: 30px;
+    padding: 5px, 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  .newPostContent {
     background-color: #fff;
    overflow: hidden;
    margin: 0.4rem;
@@ -36,29 +49,39 @@ input[type=text], [type=date], [type=number], select {
     background-color: #f8f8f8;
     resize: none;
   }
-  button {
+  button  {
     border: none;
     color: $base-100;
     padding: 16px 32px;
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
-  }
-  input[class=datebar ][type=text], [type=date], [type=number], select {
-    min-width: 50px;
-    min-height: 20x;
-    padding: 0;
-    margin: 0;
-    border: 1px solid #ccc;
+    transition: ease 1000ms;
     border-radius: 4px;
-    box-sizing: border-box;
+    &:hover {
+        color: white;
+        background-color: $base-100;
+    }
   }
-  #searchdate{
-    min-width: 100px;
-    min-height: 30px;
-    padding: 5px, 0;
-    margin: 0;
-    border: 1px solid #ccc;
+  input[type="checkbox"] {
+    opacity: 0;
+    
+  }
+  
+  label {
+    border: none;
+    color: $base-100;
+    padding: 8px 25px;
+    text-decoration: none;
+    margin: 9px;
+    cursor: pointer;
+    transition: ease 1000ms;
     border-radius: 4px;
-    box-sizing: border-box;
+    background-color:$purple-100 ;
+    user-select: none;
+  }
+  
+  .check-with-label:checked + .label-for-check {
+    color: #f8f8f8;
+    background-color: black;
   }
